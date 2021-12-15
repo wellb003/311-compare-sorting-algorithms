@@ -37,13 +37,13 @@ void bubble_sort(int a[], int n) {
   int pass_num = 0;
   cout << "Bubble sort, before sorting: ";
   display(a, n);
-  for (int j = n - 1; j > 0; j--){
+  for (int j = 0; j < n - 1; j++){
     pass_num++;
     int comparison = 0;
     int swaps = 0;
-    for (int i = 0; i < j; i++) {
+    for (int i = 0; i < n - j - 1; i++) {
       comparison++;
-      if (a[i] < a[i + 1]) {
+      if (a[i] > a[i + 1]) {
         swaps++;
         swap(a[i], a[i + 1]);
       }
@@ -169,7 +169,7 @@ int main() {
   bubble_sort(to_sort2, nElem);
   insertion_sort(to_sort3, nElem);
 
-  cout << "**We will now compare recurrsive insertion and merge sort**\n\n";
+  cout << "**We will now compare insertion and merge sort**\n\n";
   cout << right;
   cout << "Array before sorting: ";
   display(to_sort4, nElem);
@@ -191,4 +191,5 @@ int main() {
   cout << "After merge sort: ";
   display(to_sort5, nElem);
 
+  return 0;
 } 
